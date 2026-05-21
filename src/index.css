@@ -1129,7 +1129,7 @@ footer {
 .mobile-toggle {
   display: none;
 }
-
+@media (max-width: 900px) {
 
   /* Mobile layout adjustments */
   .grid-2, .grid-3, .grid-4 {
