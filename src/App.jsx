@@ -44,7 +44,7 @@ const seedInitialData = () => {
     const initialNotices = [
       {
         id: 'n1',
-        sender: 'Professor S. Jana',
+        sender: 'Prof. Amit Jana',
         senderRole: 'Professor at Adamas University',
         content: 'Welcome students to the Jana Math Academy Portal! All study materials, exam schedules, and homework notices will be shared in this live feed. Check here daily.',
         timestamp: 'May 19, 2026 at 09:00 AM',
@@ -52,7 +52,7 @@ const seedInitialData = () => {
       },
       {
         id: 'n2',
-        sender: 'Professor S. Jana',
+        sender: 'Prof. Amit Jana',
         senderRole: 'Professor at Adamas University',
         content: 'Homework Assignment 4: Solve the calculus sheet on Integration by Parts (problems 1 to 15). Upload your solutions or submit in the next class on Friday.',
         timestamp: 'May 20, 2026 at 11:30 AM',
@@ -60,7 +60,7 @@ const seedInitialData = () => {
       },
       {
         id: 'n3',
-        sender: 'Professor S. Jana',
+        sender: 'Prof. Amit Jana',
         senderRole: 'Professor at Adamas University',
         content: 'The Vector Algebra Mock Test is scheduled for next Monday (May 25th) at 4:00 PM. High-yield topics include Dot Products, Cross Products, and Scalar Triple Products. Prepare well!',
         timestamp: 'May 21, 2026 at 02:15 PM',
@@ -229,7 +229,7 @@ function App() {
 
     const newNotice = {
       id: 'notice_' + Date.now(),
-      sender: 'Professor S. Jana',
+      sender: 'Prof. Amit Jana',
       senderRole: 'Professor at Adamas University',
       content: noticeText,
       timestamp: formatTimestamp(),
@@ -252,7 +252,7 @@ function App() {
 
   // WhatsApp Share Helper
   const shareNoticeToWhatsApp = (notice) => {
-    const text = `📢 *Notice from Jana Math Academy*\n\n*Type:* ${notice.type.toUpperCase()}\n*Date:* ${notice.timestamp}\n\n*Message:*\n${notice.content}\n\n_Regards,_\n_Professor S. Jana_`;
+    const text = `📢 *Notice from Jana Math Academy*\n\n*Type:* ${notice.type.toUpperCase()}\n*Date:* ${notice.timestamp}\n\n*Message:*\n${notice.content}\n\n_Regards,_\n_Prof. Amit Jana (Amit Jana Sir)_`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://api.whatsapp.com/send?text=${encodedText}`, '_blank');
   };
@@ -280,7 +280,6 @@ function App() {
           <button 
             className="mobile-toggle"
             style={{ 
-              display: 'none', 
               background: 'none', 
               border: 'none', 
               cursor: 'pointer',
@@ -367,7 +366,7 @@ function App() {
                     Excel in Mathematics
                   </div>
                   <h1 className="hero-title">
-                    Master Mathematics with <span>Professor S. Jana</span>
+                    Master Mathematics with <span>Prof. Amit Jana</span>
                   </h1>
                   <p className="hero-description">
                     Build rock-solid conceptual clarity and ace your examinations under the guidance of an esteemed 
@@ -445,9 +444,9 @@ function App() {
               <div className="container grid-2">
                 <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <span className="hero-tag">About the Professor</span>
-                  <h2>Prof. Subrata Jana, M.Sc.</h2>
+                  <h2>Prof. Amit Jana, M.Sc. (Amit Jana Sir)</h2>
                   <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-                    Professor Subrata Jana is a highly respected educator and professor at <strong>Adamas University</strong>. With over a decade of teaching experience in tertiary mathematics and preparatory high school curriculums, Professor Jana focuses on developing logical reasoning over plain memorization.
+                    Prof. Amit Jana (Amit Jana Sir) is a highly respected educator and professor at <strong>Adamas University</strong>. With over a decade of teaching experience in tertiary mathematics and preparatory high school curriculums, Prof. Jana focuses on developing logical reasoning over plain memorization.
                   </p>
                   <p style={{ fontSize: '1.1rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
                     His teaching philosophy centers around building a solid foundation. Whether preparing for competitive exams like IIT-JEE, state board finals, or Olympiads, students get custom-tailored lectures, solved modules, and interactive problem-solving guides.
@@ -551,7 +550,7 @@ function App() {
                       <div className="feature-number">Modern Engagement 02</div>
                       <h3>Digital Communication Board</h3>
                       <p>
-                        Our specialized Student Panel keeps you connected. Professor Jana posts live announcements, study links, and exam timetables directly from his Admin Panel. Students log in securely to access all communications instantly.
+                        Our specialized Student Panel keeps you connected. Prof. Amit Jana (Amit Jana Sir) posts live announcements, study links, and exam timetables directly from his Admin Panel. Students log in securely to access all communications instantly.
                       </p>
                       <ul className="feature-highlights">
                         <li><CheckCircle size={16} /> Secured personalized logins for each student</li>
@@ -665,16 +664,7 @@ function App() {
                 </button>
               </form>
 
-              <div className="login-demo-credentials">
-                <p style={{ fontWeight: '600', marginBottom: '0.5rem', color: 'var(--text-dark)' }}>Portal Admin Credentials:</p>
-                <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <span>User: <code>admin555</code></span>
-                  <span>Pass: <code>lolff001</code></span>
-                </div>
-                <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-                  For student demo, use <code>student1</code> / <code>password1</code> or create new students using the admin panel.
-                </p>
-              </div>
+              {/* Login credentials removed for privacy */}
             </div>
           </section>
         )}
@@ -955,7 +945,7 @@ function App() {
                     </div>
                   </div>
                   <div className="chat-header-status">
-                    Professor S. Jana is Active
+                    Prof. Amit Jana is Active
                   </div>
                 </div>
 
@@ -1022,7 +1012,7 @@ function App() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-light)' }}>Primary Mentor:</span>
-                      <span style={{ fontWeight: '600', color: 'var(--text-dark)' }}>Prof. S. Jana</span>
+                      <span style={{ fontWeight: '600', color: 'var(--text-dark)' }}>Prof. Amit Jana</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                       <span style={{ color: 'var(--text-light)' }}>Session Status:</span>
@@ -1046,7 +1036,7 @@ function App() {
                     </div>
                     <div style={{ borderLeft: '3px solid var(--primary)', paddingLeft: '0.75rem' }}>
                       <h4 style={{ fontSize: '0.9rem', marginBottom: '0.15rem' }}>WhatsApp Doubts Helpline</h4>
-                      <a href="https://api.whatsapp.com/send?text=Hello%20Professor%20Jana,%20I%20have%20a%20doubt%20regarding..." target="_blank" rel="noreferrer" style={{ color: '#25d366', textDecoration: 'none', fontWeight: '600' }}>
+                      <a href="https://api.whatsapp.com/send?text=Hello%20Professor%20Amit%20Jana,%20I%20have%20a%20doubt%20regarding..." target="_blank" rel="noreferrer" style={{ color: '#25d366', textDecoration: 'none', fontWeight: '600' }}>
                         Message Professor <ArrowRight size={12} style={{ display: 'inline' }} />
                       </a>
                     </div>
@@ -1079,7 +1069,7 @@ function App() {
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li><a href="#home" onClick={() => setCurrentTab('home')}>Home Portfolio</a></li>
-              <li><a href="#about" onClick={() => { setCurrentTab('home'); setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>Meet Professor Jana</a></li>
+              <li><a href="#about" onClick={() => { setCurrentTab('home'); setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>Meet Prof. Amit Jana</a></li>
               <li><a href="#achievements" onClick={() => { setCurrentTab('home'); setTimeout(() => document.getElementById('achievements')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>Achievements</a></li>
               <li><a href="#login" onClick={() => setCurrentTab('login')}>Student Login Portal</a></li>
             </ul>
@@ -1105,7 +1095,7 @@ function App() {
         </div>
 
         <div className="container footer-bottom">
-          <p>Jana Math Academy &copy; {new Date().getFullYear()}. All Rights Reserved. Managed by Prof. S. Jana (Adamas University).</p>
+          <p>Jana Math Academy &copy; {new Date().getFullYear()}. All Rights Reserved. Managed by Prof. Amit Jana (Adamas University).</p>
         </div>
       </footer>
     </>
