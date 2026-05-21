@@ -935,6 +935,7 @@ nav a:hover, nav a.active {
 .message-card {
   align-self: flex-start;
   max-width: 85%;
+  width: 100%;
   background: var(--white);
   border-radius: 0 16px 16px 16px;
   box-shadow: 0 2px 12px rgba(2, 132, 199, 0.05);
@@ -948,23 +949,10 @@ nav a:hover, nav a.active {
   border-left: 4px solid var(--primary);
 }
 
-.message-meta {
-  padding: 0.75rem 1rem 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px dashed rgba(2, 132, 199, 0.08);
-}
-
 .message-sender {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--primary-hover);
-}
-
-.message-time {
-  font-size: 0.75rem;
-  color: var(--text-light);
 }
 
 .message-content {
@@ -1383,12 +1371,6 @@ footer {
   .message-content {
     padding: 0.75rem;
     font-size: 0.9rem;
-  }
-  .message-meta {
-    padding: 0.5rem 0.75rem 0.15rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
   }
   .message-footer {
     flex-direction: column;

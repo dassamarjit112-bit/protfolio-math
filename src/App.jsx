@@ -961,12 +961,8 @@ function App() {
                     // For chat feel, rendering newest on top works fine, or reverse it. Let's list newest at the top but make it visually clear.
                     notices.map((notice) => (
                       <div key={notice.id} className="message-card sender-admin">
-                        <div className="message-meta">
-                          <span className="message-sender">{notice.sender} ({notice.senderRole})</span>
-                          <span className="message-time">{notice.timestamp}</span>
-                        </div>
-                        
                         <div className="message-content">
+                          <div className="message-sender" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary-hover)', marginBottom: '0.5rem' }}>{notice.sender}</div>
                           <span className={`badge badge-${notice.type}`} style={{ marginBottom: '0.75rem', display: 'inline-flex' }}>{notice.type}</span>
                           <p style={{ color: 'var(--text-dark)', fontWeight: '400', wordBreak: 'break-word' }}>{notice.content}</p>
                         </div>
