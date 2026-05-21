@@ -105,6 +105,7 @@ function App() {
   const [noticeText, setNoticeText] = useState('');
   const [noticeType, setNoticeType] = useState('announcement');
   const [noticeSuccessMsg, setNoticeSuccessMsg] = useState('');
+  const [selectedNotice, setSelectedNotice] = useState(null); // For message popup modal
 
   // Sync state back to localStorage
   useEffect(() => {
@@ -960,7 +961,7 @@ function App() {
                     // Show notices from oldest to newest or newest to oldest. Typically log is newest on top.
                     // For chat feel, rendering newest on top works fine, or reverse it. Let's list newest at the top but make it visually clear.
                     notices.map((notice) => (
-                      <div key={notice.id} className="message-card sender-admin">
+                      <div key={notice.id} className="message-card sender-admin" onClick={() => setSelectedNotice(notice)} style={{ cursor: 'pointer' }}>
                         <div className="message-content">
                           <div className="message-sender" style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary-hover)', marginBottom: '0.5rem' }}>{notice.sender}</div>
                           <span className={`badge badge-${notice.type}`} style={{ marginBottom: '0.75rem', display: 'inline-flex' }}>{notice.type}</span>
@@ -977,7 +978,7 @@ function App() {
                           <button 
                             className="btn btn-white btn-sm"
                             style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
-                            onClick={() => shareNoticeToWhatsApp(notice)}
+                            onClick={(e) => { e.stopPropagation(); shareNoticeToWhatsApp(notice); }}
                           >
                             <Share2 size={12} style={{ marginRight: '4px' }} /> Share notice
                           </button>
@@ -1046,6 +1047,33 @@ function App() {
         )}
 
       </main>
+
+      {/* Message Popup Modal */}
+      {selectedNotice && (
+        <div className="modal-overlay" onClick={() => setSelectedNotice(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedNotice(null)}>
+              <X size={24} />
+            </button>
+            <div className="modal-header">
+              <div className="modal-sender">{selectedNotice.sender}</div>
+              <span className={`badge badge-${selectedNotice.type}`}>{selectedNotice.type}</span>
+            </div>
+            <div className="modal-body">
+              <p>{selectedNotice.content}</p>
+            </div>
+            <div className="modal-footer">
+              <button 
+                className="btn btn-primary btn-sm"
+                onClick={() => { shareNoticeToWhatsApp(selectedNotice); setSelectedNotice(null); }}
+                style={{ width: '100%' }}
+              >
+                <Share2 size={16} /> Share via WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer / Contact Details */}
       <footer>
