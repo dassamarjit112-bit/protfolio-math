@@ -963,7 +963,7 @@ function App() {
                       <div key={notice.id} className="message-card sender-admin">
                         <div className="message-meta">
                           <span className="message-sender">{notice.sender} ({notice.senderRole})</span>
-                          <span className="message-time">{notice.timestamp}</span>
+
                         </div>
                         
                         <div className="message-content">
