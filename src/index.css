@@ -1130,7 +1130,48 @@ footer {
   display: none;
 }
 
-@media (max-width: 900px) {
+
+  /* Mobile layout adjustments */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  .why-grid, .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  .feature-row {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  .feature-media, .feature-text {
+    width: 100%;
+  }
+  .hero-section {
+    padding: 4rem 0 2rem;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-image-container {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .login-card {
+    width: auto;
+    max-width: 100%;
+    padding: 2rem 1rem;
+  }
+  .dashboard-grid, .admin-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
   .mobile-toggle {
     display: block;
   }
